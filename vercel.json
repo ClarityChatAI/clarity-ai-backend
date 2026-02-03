@@ -2,7 +2,7 @@
   "buildCommand": "npm install",
   "outputDirectory": ".",
   "env": {
-    "FIREBASE_TYPE": "@firebase_type",
+    "type": "service_account",
     "FIREBASE_PROJECT_ID": "@firebase_project_id",
     "FIREBASE_PRIVATE_KEY_ID": "@firebase_private_key_id",
     "FIREBASE_PRIVATE_KEY": "@firebase_private_key",

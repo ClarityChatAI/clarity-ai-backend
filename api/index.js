@@ -10,7 +10,7 @@ app.use(cors());
 
 // Firebase initialization
 const serviceAccount = {
-  type: process.env.FIREBASE_TYPE,
+  type: 'service_account',
   project_id: process.env.FIREBASE_PROJECT_ID,
   private_key_id: process.env.FIREBASE_PRIVATE_KEY_ID,
   private_key: process.env.FIREBASE_PRIVATE_KEY.replace(/\\n/g, '\n'),

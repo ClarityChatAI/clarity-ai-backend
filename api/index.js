@@ -10,17 +10,18 @@ app.use(cors());
 
 // Firebase initialization
 const serviceAccount = {
-  type: 'service_account',
-  project_id: 'clarity-ai-749a1',
-  private_key_id: '1fbe30029c2cfbcb670b89306407b756d8eb2bdf',
-  private_key: '-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQC7VJTUt9Us8cKj\nMzEfYyjiWA4/4eFR2t+FmwMx7nHIcV08UVT/32DY11ZSRVF8yvkFlAMR0CHr00aw\n+RZAiGlg8tkjMIWu3vs+lEY+RF1F4W7u43YdHn26/48O7O7p2u+ZeImx62akE7ia\n3mHlWI7DkQvesF3UNqkxiub1dUfJ5Z7QVcDyvUw6putlD4xMCa0p8ZLnQXImd9P9\n2Z+2Z9sNrWBvUZnhCoYYoXocqJmj5ZfvWIIFFuauMFqWfxeDXsXijtrCHu8K+6Tz\nqx2LA3tcjuVaPJxMx2D+zlAYzEe5qGAHE7kM4+5KX9uTSVEUSuauvKxWNCeVMQKB\ngQDh6xF+A6LVk1QV5nXJBFwE4PvLwHdKqt4vJMqZJQsCuEpAMVILOA==\n-----END PRIVATE KEY-----\n',
-  client_email: 'firebase-adminsdk-fbsvc@clarity-ai-749a1.iam.gserviceaccount.com',
-  client_id: '100447262029874910030',
-  auth_uri: 'https://accounts.google.com/o/oauth2/auth',
-  token_uri: 'https://oauth2.googleapis.com/token',
-  auth_provider_x509_cert_url: 'https://www.googleapis.com/oauth2/v1/certs',
-  client_x509_cert_url: 'https://www.googleapis.com/robot/v1/metadata/x509/firebase-adminsdk-fbsvc%40clarity-ai-749a1.iam.gserviceaccount.com',
+  type: process.env.FIREBASE_TYPE || 'service_account',
+  project_id: process.env.FIREBASE_PROJECT_ID,
+  private_key_id: process.env.FIREBASE_PRIVATE_KEY_ID,
+  private_key: (process.env.FIREBASE_PRIVATE_KEY || '').replace(/\\n/g, '\n'),
+  client_email: process.env.FIREBASE_CLIENT_EMAIL,
+  client_id: process.env.FIREBASE_CLIENT_ID,
+  auth_uri: process.env.FIREBASE_AUTH_URI,
+  token_uri: process.env.FIREBASE_TOKEN_URI,
+  auth_provider_x509_cert_url: process.env.FIREBASE_AUTH_PROVIDER_X509_CERT_URL,
+  client_x509_cert_url: process.env.FIREBASE_CLIENT_X509_CERT_URL,
 };
+
 
 
 admin.initializeApp({

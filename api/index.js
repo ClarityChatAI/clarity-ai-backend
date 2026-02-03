@@ -10,16 +10,43 @@ app.use(cors());
 
 // Firebase initialization
 const serviceAccount = {
-  type: process.env.FIREBASE_TYPE || 'service_account',
-  project_id: process.env.FIREBASE_PROJECT_ID,
-  private_key_id: process.env.FIREBASE_PRIVATE_KEY_ID,
-  private_key: (process.env.FIREBASE_PRIVATE_KEY || '').replace(/\\n/g, '\n'),
-  client_email: process.env.FIREBASE_CLIENT_EMAIL,
-  client_id: process.env.FIREBASE_CLIENT_ID,
-  auth_uri: process.env.FIREBASE_AUTH_URI,
-  token_uri: process.env.FIREBASE_TOKEN_URI,
-  auth_provider_x509_cert_url: process.env.FIREBASE_AUTH_PROVIDER_X509_CERT_URL,
-  client_x509_cert_url: process.env.FIREBASE_CLIENT_X509_CERT_URL,
+type: "service_account",
+project_id: "clarity-ai-749a1",
+private_key_id: "1fbe30029c2cfbcb670b89306407b756d8eb2bdf",
+private_key: "-----BEGIN PRIVATE KEY-----
+MIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQDC8HcrVira5zF4
+nqi7njfaXCtZgXKvdwDPhgkN6yqjQUJzmFXGe1mcyATkfxfFYu3dEmLFlHGNRSrL
+u3vGKOmIDfdTG72/7UauzE5vJnZJ6t1cTXjf9z3x437BJkQP7k7XcszRpRg+Weei
+n5aWMufdMzaus2LE/PP4rhImI8mbWHctAUokmW2A+ilZ6W2Yfit2nccrm/i5XA9R
+md/h6DO3bRr3LyYdUIz+u/4SNnZvbjJyIbMa68ix7zgk51nIagboNe3YtKnfDDIq
+8sJpKecCh+whS0zBcmPk8p6CuYjtMu8hyZByB0rPn991AbMiQq5s/ZL4M28Qk6AB
+S1RvSWmlAgMBAAECggEAHuusB153VToLNY37Byl5RARPJvcatRzL7t7clE3bOUJ6
+cyH0ZxN9OxpZ9lF3eIpw3tpR+vOJEGaqe17daujl4/wNISxbDHSrO8Ix5b0E0cQ0
+gPXT6LiLpZDXc/UpIhrDfDacKNvGTOuPS5MDPIdOEl7Te2H+Vm8mFqmrvMt76M0Y
+Sp+QSKlzcJfwvRPLKIW9Lfc2hXtqk23zCGqrMSD9iB75Uil9BdlSaTLyoI6T/Os2
+qGPjPq4sgztyEMi7vexehD0N0fqvpp3OLhfy2pk6oWxjLStOUz1NPaKsSJUdFBwz
+7ihXuPrE7UPg1JpOnslR11rbIcRmuRmHYPAR5BL1sQKBgQDouTr0xwEKw0lgXkyN
+fJNQtJFTYTVk6tGO4oNHPGLrR/zUQFIV4VQafhqigJDUO8o1p5SpDYyRgPH4nDDD
+KQhjNisAZO+RYS4QDCF2j+4hqIjIkclh5ufuF7eu7pD9G1Cgn0aD1eYW3NxgIkIR
+Jg3NWGidjHRwuq+/NGmhawGttQKBgQDWb8nuZWb7b/QRtgX2uhvuMIUsIOQV6C09
+1zX68U362j6ARpVFsMA/SnYa9GahpDwXi6Wxf9UWEiOm+Pj4BF3H22bAriDzJnZ0
+OmJH3TJCZt6o+ukrvNHN0zEmFWB5trnpbuiWevU0Hq2A4AvwZOIvndiKZx8hRLNh
+9jAbyYTCMQKBgQC27ImbxyRZimCNn/F6MNY2VIf6SulGNpCbSA46GwwBtebUCu66
+hg+udzqGSpoMSCbL/7oJGz5HTFxltpdZf1I5cWVhfPUVh5ZGRNK0t7NMv4UsafMp
+we7BpeDaXmiWmjbI2gj6LVIa3GVYJvVZN1kX9Are83y+8u6bUx5II60BFQKBgEi8
+hoxczP/Ay9MuIPu9yTeUMbf0OCnOJXpyg5bpPwA2AzlTt9J5z9woD8O43w85PEDo
+V33L1KW15W3/ycOnB4CBRWtaJUcU5t0p6KhjuWaYqjI7WdhCJhBg8KzwV1cxygIK
+Ys6YSpAxT70FQkd6kNaB/i+EJyULvqUd8teaFXQhAoGBAI4PeJ/6WFO67ci2MGx3
+wDnxWIM5NNbwzwd4JxDpmZwNvnoxtEkmuXod1y6Bu65vrkgli3edhByQiw8BOplf
+ueccL4Yq/hyYPWZkDSpRUfyLDSuc5E3zoyB+LZDIYfGGZqE9EflgdhVCMD7YQ7CF
+xvaWgaE6NGeDWjQFUUj2V1v5
+-----END PRIVATE KEY-----",
+client_email: "firebase-adminsdk-fbsvc@clarity-ai-749a1.iam.gserviceaccount.com",
+client_id: "100447262029874910030",
+auth_uri: "https://accounts.google.com/o/oauth2/auth",
+token_uri: "https://oauth2.googleapis.com/token",
+auth_provider_x509_cert_url: "https://www.googleapis.com/oauth2/v1/certs",
+client_x509_cert_url: "https://www.googleapis.com/robot/v1/metadata/x509/firebase-adminsdk-fbsvc%40clarity-ai-749a1.iam.gserviceaccount.com",
 };
 
 
